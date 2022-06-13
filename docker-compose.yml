@@ -1,0 +1,9 @@
+services:
+  db:
+    build: .
+    scale: 2
+    volumes:
+      - ./:/app
+      - /app/node_modules/
+      - /app/ipfs/
+      - /app/orbitdb/
