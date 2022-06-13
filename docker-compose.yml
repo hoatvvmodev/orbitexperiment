@@ -7,3 +7,5 @@ services:
       - /app/node_modules/
       - /app/ipfs/
       - /app/orbitdb/
+    ports:
+      - "4002"

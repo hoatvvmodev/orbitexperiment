@@ -5,9 +5,11 @@ async function main () {
     const ipfsOptions = { 
       repo: './ipfs',
       // relay: { enabled: true, hop: { enabled: true, active: true } },
-      // config: {
-      //   "Bootstrap": ["/dns4/node3.preload.ipfs.io/tcp/443/wss/p2p/QmY7JB6MQXhxHvq7dBDh4HpbH29v4yE9JRadAVpndvzySN"]
-      // }
+      config: {
+        Addresses: {
+          Swarm: ['/ip4/stag1.clearkeep.org/tcp/4002']
+        }
+      }
     }
     const ipfs = await IPFS.create(ipfsOptions)
     const peerInfo = await ipfs.id()
