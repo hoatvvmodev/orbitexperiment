@@ -1,11 +1,11 @@
 services:
   db:
     build: .
-    scale: 2
+    scale: 1
     volumes:
       - ./:/app
       - /app/node_modules/
       - /app/ipfs/
       - /app/orbitdb/
     ports:
-      - "4002"
+      - "4002:4002"

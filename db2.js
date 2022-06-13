@@ -7,7 +7,7 @@ async function main () {
       // relay: { enabled: true, hop: { enabled: true, active: true } },
       config: {
         Addresses: {
-          Swarm: ['/ip4/stag1.clearkeep.org/tcp/4002']
+          Announce: ['/ip4/45.76.179.234/tcp/4002']
         }
       }
     }
