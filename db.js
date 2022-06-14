@@ -20,9 +20,7 @@ async function main () {
     await db.put('name', 'hello', { pin: true })
     // console.log(await ipfs.bootstrap.list())
     // console.log(await ipfs.swarm.peers())
-    // setInterval(async () => {
-    //   await ipfs.pubsub.publish('12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R', "test")
-    // }, 1000)
+    await ipfs.pubsub.subscribe(peerInfo.id, () => { console.log("receive message");})
     console.log(await ipfs.config.getAll())
     console.log(db.all)
     // ipfs.libp2p.connectionManager.on('peer:connect', (ipfsPeer) => {

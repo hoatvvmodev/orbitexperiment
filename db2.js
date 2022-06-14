@@ -30,10 +30,12 @@ async function main () {
     // console.log(await ipfs.bootstrap.list())
     // console.log(peerInfo)
     // console.log(await ipfs.config.getAll())
-    // await ipfs.pubsub.subscribe(peerInfo.id, () => { console.log("receive message");})
     // setInterval(async () => {
     //     console.log('==========')
     //     console.log((await ipfs.swarm.peers()).length)
     // }, 3000)
+    setInterval(async () => {
+      await ipfs.pubsub.publish('12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R', "test")
+    }, 1000)
   }
 main()
