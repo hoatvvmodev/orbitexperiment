@@ -22,8 +22,6 @@ async function main () {
     // console.log(await ipfs.swarm.peers())
     setInterval(async () => {
       await ipfs.pubsub.publish('12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R', "test")
-      const topics = await ipfs.pubsub.ls()
-      console.log(topics)
     }, 1000)
     // console.log(await ipfs.config.getAll())
     // ipfs.libp2p.connectionManager.on('peer:connect', (ipfsPeer) => {
@@ -37,6 +35,6 @@ async function main () {
     // })
     // await ipfs.pubsub.publish('12D3KooWNDoch6DgnwECK7GNovjUa574hwFEb5fM7morTf6HpMzX', "test")
     // console.log("ok")
-    await ipfs.swarm.connect('/ip4/45.76.179.234/tcp/4002/p2p/12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R')
+    // await ipfs.swarm.connect('/ip4/45.76.179.234/tcp/4002/p2p/12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R')
   }
 main()
