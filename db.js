@@ -20,11 +20,11 @@ async function main () {
     // await db.put('name', 'hello', { pin: true })
     // console.log(await ipfs.bootstrap.list())
     // console.log(await ipfs.swarm.peers())
-    // setInterval(async () => {
-    //   await ipfs.pubsub.publish('12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R', "test")
-    //   const topics = await ipfs.pubsub.ls()
-    //   console.log(topics)
-    // }, 1000)
+    setInterval(async () => {
+      await ipfs.pubsub.publish('12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R', "test")
+      const topics = await ipfs.pubsub.ls()
+      console.log(topics)
+    }, 1000)
     // console.log(await ipfs.config.getAll())
     // ipfs.libp2p.connectionManager.on('peer:connect', (ipfsPeer) => {
     //   const ipfsId = ipfsPeer.remotePeer.toB58String()
