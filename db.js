@@ -4,7 +4,8 @@ const OrbitDB = require('orbit-db')
 async function main () {
     const ipfsOptions = { 
       repo: './ipfs',
-      // relay: { enabled: true, hop: { enabled: true, active: true } },
+      relay: { enabled: true, hop: { enabled: true, active: true } },
+      EXPERIMENTAL: { pubsub: true },
       config: {
         Addresses: {
           Announce: ['/ip4/65.20.67.87/tcp/4002']
@@ -25,16 +26,17 @@ async function main () {
     //   console.log(topics)
     // }, 1000)
     // console.log(await ipfs.config.getAll())
-    ipfs.libp2p.connectionManager.on('peer:connect', (ipfsPeer) => {
-      const ipfsId = ipfsPeer.remotePeer.toB58String()
-      if (ipfsId == '12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R') {
-        console.log('done')
-      }
-      setTimeout(async () => {
-        await ipfs.pubsub.publish(ipfsId, "test")
-      }, 2000);
-    })
+    // ipfs.libp2p.connectionManager.on('peer:connect', (ipfsPeer) => {
+    //   const ipfsId = ipfsPeer.remotePeer.toB58String()
+    //   if (ipfsId == '12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R') {
+    //     console.log('done')
+    //   }
+    //   setTimeout(async () => {
+    //     await ipfs.pubsub.publish(ipfsId, "test")
+    //   }, 2000);
+    // })
     // await ipfs.pubsub.publish('12D3KooWNDoch6DgnwECK7GNovjUa574hwFEb5fM7morTf6HpMzX', "test")
     // console.log("ok")
+    await this.node.swarm.connect('/ip4/45.76.179.234/tcp/4002/p2p/12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R')
   }
 main()
