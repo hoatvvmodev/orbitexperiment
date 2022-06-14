@@ -37,6 +37,6 @@ async function main () {
     // })
     // await ipfs.pubsub.publish('12D3KooWNDoch6DgnwECK7GNovjUa574hwFEb5fM7morTf6HpMzX', "test")
     // console.log("ok")
-    await this.node.swarm.connect('/ip4/45.76.179.234/tcp/4002/p2p/12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R')
+    await ipfs.swarm.connect('/ip4/45.76.179.234/tcp/4002/p2p/12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R')
   }
 main()
