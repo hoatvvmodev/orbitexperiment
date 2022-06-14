@@ -10,6 +10,7 @@ async function main () {
         Addresses: {
           Announce: []
         },
+        Bootstrap: ['/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ'],
         Discovery: {
           MDNS: {
               Enabled: true,
