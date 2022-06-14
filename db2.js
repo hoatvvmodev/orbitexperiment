@@ -8,7 +8,7 @@ async function main () {
       EXPERIMENTAL: { pubsub: true },
       config: {
         Addresses: {
-          Announce: ['/ip4/45.76.179.234/tcp/4002']
+          Announce: []
         }
       }
     }
