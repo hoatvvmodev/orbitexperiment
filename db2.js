@@ -14,10 +14,13 @@ async function main () {
     }
     const ipfs = await IPFS.create(ipfsOptions)
     const peerInfo = await ipfs.id()
-    // const orbitdb = await OrbitDB.createInstance(ipfs)
-    // const db = await orbitdb.keyvalue('/orbitdb/zdpuApcKQg5PbwAYRh67rH6hekutzWymtQQSE5vnTU7w8ekXY/first-database')
-    // console.log(db.address.toString())
-    
+    const orbitdb = await OrbitDB.createInstance(ipfs)
+    const db = await orbitdb.keyvalue('/orbitdb/zdpuB1DR6SNetuV8sDcCeLYNHBhmXveZYgiMgjG2KHccg3Jxg/first-database')
+    console.log(db.address.toString())
+    db.events.on('replicated', () => {
+      console.log(db.all)
+    });
+    await ipfs.swarm.connect('/ip4/45.76.179.234/tcp/4002/p2p/12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R')
     // setInterval(async () => {
     //   console.log('==========')
     //   console.log((await ipfs.swarm.peers()).length)
@@ -25,9 +28,9 @@ async function main () {
     // console.log(await ipfs.bootstrap.list())
     // console.log(await ipfs.swarm.peers())
     // console.log(await ipfs.bootstrap.list())
-    console.log(peerInfo)
-    console.log(await ipfs.config.getAll())
-    await ipfs.pubsub.subscribe(peerInfo.id, () => { console.log("receive message");})
+    // console.log(peerInfo)
+    // console.log(await ipfs.config.getAll())
+    // await ipfs.pubsub.subscribe(peerInfo.id, () => { console.log("receive message");})
     // setInterval(async () => {
     //     console.log('==========')
     //     console.log((await ipfs.swarm.peers()).length)

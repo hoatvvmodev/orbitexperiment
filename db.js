@@ -24,6 +24,7 @@ async function main () {
     //   await ipfs.pubsub.publish('12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R', "test")
     // }, 1000)
     console.log(await ipfs.config.getAll())
+    console.log(db.all)
     // ipfs.libp2p.connectionManager.on('peer:connect', (ipfsPeer) => {
     //   const ipfsId = ipfsPeer.remotePeer.toB58String()
     //   if (ipfsId == '12D3KooWN55kbab2wpwRZXjpYZXojvEKsgBStLNXr7oZTd8t5u7R') {
