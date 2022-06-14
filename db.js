@@ -4,8 +4,8 @@ const OrbitDB = require('orbit-db')
 async function main () {
     const ipfsOptions = { 
       repo: './ipfs',
-      // relay: { enabled: true, hop: { enabled: true, active: true } },
-      // EXPERIMENTAL: { pubsub: true },
+      relay: { enabled: true, hop: { enabled: true, active: true } },
+      EXPERIMENTAL: { pubsub: true },
       config: {
         Addresses: {
           Announce: ['/ip4/45.76.179.234/tcp/4002']
